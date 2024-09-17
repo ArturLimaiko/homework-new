@@ -11,13 +11,13 @@ import s2 from '../../s1-main/App.module.css'
 * 6 - дописать тип и логику функции deleteAffairCallback
 * 7 - в файле Affairs.tsx дописать типизацию пропсов
 * 8 - в файле Affairs.tsx дописать логику функций setAll, setHigh, setMiddle, setLow
-* 9 - в файле Affair.tsx дописать типизацию пропсов //тут остановился
+* 9 - в файле Affair.tsx дописать типизацию пропсов
 * 10 - в файле Affair.tsx дописать функции deleteCallback и использовать
 * 11 - в файле Affair.tsx отобразить приходящие данные
 * */
 
 // types
-export type AffairPriorityType = string
+export type AffairPriorityType = 'low' | 'middle' | 'high'
 export type AffairType = {
     _id: number
     name: string
@@ -35,12 +35,16 @@ const defaultAffairs: AffairType[] = [
 ]
 
 // pure helper functions
-export const filterAffairs = (affairs: AffairType[] , filter: AffairPriorityType):AffairType[] => {
-    return  affairs.filter(f => f.priority === filter)// need to fix
+//функция фильтра дел
+export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => {
+    affairs.map(el => el.priority === filter ? {...el, filter} : el)
+    return filter === 'all'
+        ? affairs
+        : affairs.filter(a => a.priority === filter)
 }
+// функция удаления дел
 export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] => { // need to fix any
-
-    return affairs.filter(a => a._id !== _id)
+    return affairs.filter(f => f._id !== _id)
 }
 
 function HW2() {
@@ -48,7 +52,9 @@ function HW2() {
     const [filter, setFilter] = useState<FilterType>('all')
 
     const filteredAffairs = filterAffairs(affairs, filter)
-    const deleteAffairCallback = (_id: number) => { // need to fix any
+    const deleteAffairCallback = (_id: number) => {
+        //в callBack функцию удаления дел - сетаем саму функцию deleteAffair ,
+        // а в параметрах передаем изначальный список дел affair , и _id
         setAffairs(deleteAffair(affairs, _id))
     }
 
