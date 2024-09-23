@@ -2,37 +2,75 @@
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    margin-top: 10px;
 }
 
 .error {
+    color: #CC0000;
+
 }
 
-.input {
-    border: 1px solid gray;
+.input,
+.input:focus,
+.errorInput {
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+    padding: 10px;
+    outline: none;
+    min-width: 300px;
 }
 
 .input:focus {
-    outline : none;
+
 }
 
 .errorInput {
-    border: 1px solid red;
-    outline:none
+    border: 1px solid #CC0000;
+
+
 }
 
 .button {
+    background-color: #0066CC;
+}
+
+.button:hover {
+    background-color: rgba(0, 102, 204, 0.5);
+}
+
+.button,
+.button:focus,
+.button:active,
+.button:disabled {
+    margin: 0;
+    display: block;
+    padding: 0 24px;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    line-height: 1;
+    height: 37px;
 }
 
 .button:focus {
+    background-color: rgba(65, 105, 225, 0.5);
 }
 
 .button:active {
+    background-color: rgba(0, 102, 204, 0.25);
 }
 
 .button:disabled {
+    background-color: rgba(65, 105, 225, 0.25);
 }
 
-.text {
+.text{
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .greeting {
