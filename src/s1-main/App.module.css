@@ -1,11 +1,17 @@
 .App {
+    font-family: Montserrat, Arial, Helvetica, serif;
     --header_height: 60px;
+
 }
 
 .hw {
-
+    padding: 32px 70px;
 }
 
 .hwTitle {
-
+    font-size: 30px;
+    font-weight: bold;
+    padding:40px 70px;
+    border-bottom: 1px solid #d9d9d9;
+    border-top: 1px solid #d9d9d9;
 }

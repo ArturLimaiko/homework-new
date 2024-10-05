@@ -1,7 +1,12 @@
 .burgerMenuIcon {
+    cursor: pointer;
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px 70px;
 }
 
 .header h1 {
