@@ -29,8 +29,6 @@
 
 .errorInput {
     border: 1px solid #CC0000;
-
-
 }
 
 .button {
@@ -69,7 +67,7 @@
     background-color: rgba(65, 105, 225, 0.25);
 }
 
-.text{
+.text {
     color: rgba(0, 0, 0, 0.5);
 }
 
