@@ -19,7 +19,9 @@ const HW6 = () => {
     }
     const restore = () => {
         // делают студенты
-
+        //если в localStorage ничего не найдено вернется по умолчанию
+        //сетаем  и обновляем значение если существует
+        setValue(restoreState<string>('hw6-editable-span-value', ''))
     }
 
     return (
