@@ -1,23 +1,64 @@
-.item {
-}
-
-.item:last-of-type {
-}
-
-.users {
-}
-
 .buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 18px;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 50%;
 }
 
+/* Общий стиль для таблицы */
+.users {
+    width: 100%;
+    border-collapse: collapse; /* Убираем пробелы между ячейками */
+}
+
+/* Стиль для заголовка */
 .thead {
+    background-color: lightgray;
+}
+
+.thead tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Два столбца для "Full name" и "Age" */
+    padding: 10px;
+}
+
+.thead td {
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Стиль для строк с данными */
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Два столбца для имени и возраста */
+    padding: 10px;
+    border-bottom: 1px solid lightgray; /* Добавляем границу */
+}
+
+.item:last-of-type {
+    border-bottom: none;
+}
+
+.nameCol, .ageCol {
+    padding: 10px;
 }
 
 .nameCol {
+    text-align: left;
 }
 
 .ageCol {
+    text-align: left;
+}
+
+.thead th {
+    font-weight: bold;
 }
