@@ -12,6 +12,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
+    background-color: #5c5c5c;
 }
 
 code {
