@@ -12,33 +12,33 @@ function Clock() {
     const start = () => {
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-      if (!timerId) { // Проверка, чтобы не запустить второй таймер
-          const indervalId =  window.setInterval (() => {
-              setDate(new Date()) // Обновляем состояние даты каждую секунду
-              setTimerId(indervalId) // Сохраняем идентификатор таймера
-          }, 1000)
-      }
+        if (!timerId) { // Проверка, чтобы не запустить второй таймер
+            const indervalId = window.setInterval(() => {
+                setDate(new Date()) // Обновляем состояние даты каждую секунду
+            }, 1000)
+            setTimerId(indervalId) // Сохраняем идентификатор таймера
+        }
     }
 
     const stop = () => {
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
-            if(timerId !== undefined ) { // Проверка, чтобы убедиться, что таймер запущен
-                    clearInterval(timerId) // Остановка таймера
-                setTimerId(undefined) // Сброс идентификатора таймера Обнуляем `timerId`, чтобы можно было снова запустить
-            }
+        if (timerId !== undefined) { // Проверка, чтобы убедиться, что таймер запущен
+            clearInterval(timerId) // Остановка таймера
+            setTimerId(undefined) // Сброс идентификатора таймера Обнуляем `timerId`, чтобы можно было снова запустить
+        }
     }
 
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
-            setShow(true)
+        setShow(true)
     }
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
         setShow(false)
     }
-    const stringTime = date.toLocaleTimeString('en-US',{ hour: '2-digit', minute: '2-digit', hour12: false }) //'date->time' || <br/>  // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = date.toLocaleDateString('en-US') //'date->date' || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringTime = date.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: false}) //'date->time' || <br/>  // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringDate = date.toLocaleDateString('en-US', {day: '2-digit', month: '2-digit', year: 'numeric'}) //'date->date' || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = date.toLocaleDateString('en',{weekday: 'long'} ) // пишут студенты
+    const stringDay = date.toLocaleDateString('en', {weekday: 'long'}) // пишут студенты
     const stringMonth = date.toLocaleDateString('en', {month: 'long'})// пишут студенты
 
     return (
