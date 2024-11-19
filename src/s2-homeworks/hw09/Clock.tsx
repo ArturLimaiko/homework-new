@@ -35,11 +35,11 @@ function Clock() {
         setShow(false)
     }
     const stringTime = date.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: false}) //'date->time' || <br/>  // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = date.toLocaleDateString('en-US', {day: '2-digit', month: '2-digit', year: 'numeric'}) //'date->date' || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = `${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}.${date.getFullYear()}`
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = date.toLocaleDateString('en', {weekday: 'long'}) // пишут студенты
-    const stringMonth = date.toLocaleDateString('en', {month: 'long'})// пишут студенты
+    const stringDay = date.toLocaleDateString('en-US', {weekday: 'long'}) // пишут студенты
+    const stringMonth = date.toLocaleDateString('en-US',{month: 'long'})// пишут студенты
 
     return (
         <div className={s.clock}>
