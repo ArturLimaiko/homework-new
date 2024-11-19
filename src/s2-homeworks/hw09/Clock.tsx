@@ -18,7 +18,7 @@ function Clock() {
             }, 1000)
             setTimerId(indervalId) // Сохраняем идентификатор таймера
         }
-    }
+    } //fix
 
     const stop = () => {
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
